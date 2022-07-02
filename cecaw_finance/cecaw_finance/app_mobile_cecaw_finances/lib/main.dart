@@ -1,4 +1,3 @@
-import 'package:app_mobile_cecaw_finances/services/credit/Form_Credit.dart';
 import 'package:flutter/material.dart';
 import 'welcome_page.dart';
 
@@ -15,7 +14,7 @@ class DevMobile extends StatelessWidget {
       title: 'Cecaw App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const FormCredit(),
+      home: const WelcomePage(),
     );
   }
 }

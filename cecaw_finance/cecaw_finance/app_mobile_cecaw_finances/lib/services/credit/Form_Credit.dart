@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'dart:async';
+import 'Services_credit.dart';
 
 class FormCredit extends StatefulWidget {
   const FormCredit({Key? key}) : super(key: key);
@@ -10,20 +10,6 @@ class FormCredit extends StatefulWidget {
 }
 
 class _FormCreditState extends State<FormCredit> {
-
-String _val = '';
-
-Future _select_full_date()async{
-  DateTime? naiss = await showDatePicker(
-    context: context,
-    initialDate: DateTime.now(),
-    firstDate: DateTime(1930),
-    lastDate: DateTime(2100));
-    if(naiss!=null) setState(() {
-      _val = naiss.toString();
-    });
-
-}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +36,6 @@ Future _select_full_date()async{
         ),
       ),
       backgroundColor: Colors.white,
-      
       body: ListView(children: [
         Container(
           margin: const EdgeInsets.symmetric(
@@ -69,9 +54,8 @@ Future _select_full_date()async{
         ),
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(  
+          child: Column(
             children: [
-              Column(),
               TextFormField(
                 decoration: InputDecoration(
                   labelText: 'Nom de famille'.toUpperCase(),
@@ -105,16 +89,14 @@ Future _select_full_date()async{
               ),
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: '$_val'.toUpperCase(),
-                  hintText: 'Entrer votre Date de naissance',
-                  icon: const Icon(Icons.date_range,),
+                  labelText: 'Date de naissance'.toUpperCase(),
+                  hintText: 'Entrer date de naissance',
                   labelStyle: const TextStyle(
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
                 ),
               ),
-              
               TextFormField(
                 decoration: InputDecoration(
                   labelText: 'Numero CNI'.toUpperCase(),
@@ -194,7 +176,7 @@ Future _select_full_date()async{
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: const StadiumBorder(),

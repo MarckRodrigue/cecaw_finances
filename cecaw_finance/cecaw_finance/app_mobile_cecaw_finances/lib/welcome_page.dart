@@ -9,7 +9,6 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      
       body: SingleChildScrollView(
           child: Container(
         margin: const EdgeInsets.only(
